@@ -2,6 +2,7 @@
   'use strict';
   var C = window.SITE_CONFIG || {};
   var TOTAL = C.seatsTotal || 10;
+  var LIVE = C.paymentMode === 'live' && !!C.apiBase;
   var TAKEN = Math.max(0, Math.min(TOTAL, Math.round(Number(C.seatsTaken) || 0)));
   var LEFT = TOTAL - TAKEN;
   var PRICE = C.price || 2000;
@@ -18,10 +19,12 @@
   }
 
   // ---------- места ----------
-  var remainingLabel = LEFT === 0 ? 'Мест не осталось — напишите нам, запишем в лист ожидания'
-    : 'Осталось ' + LEFT + ' ' + seatsWord(LEFT) + ' из ' + TOTAL;
-  $$('[data-remaining]').forEach(function (el) { el.textContent = remainingLabel; });
-  $$('[data-remaining-short]').forEach(function (el) { el.textContent = LEFT === 0 ? 'мест нет' : 'осталось ' + LEFT; });
+  function renderSeatLabels() {
+    var label = LEFT === 0 ? 'Мест не осталось — напишите нам, запишем в лист ожидания'
+      : 'Осталось ' + LEFT + ' ' + seatsWord(LEFT) + ' из ' + TOTAL;
+    $$('[data-remaining]').forEach(function (el) { el.textContent = label; });
+    $$('[data-remaining-short]').forEach(function (el) { el.textContent = LEFT === 0 ? 'мест нет' : 'осталось ' + LEFT; });
+  }
 
   // ---------- карта ----------
   var mapUrl = 'https://yandex.ru/maps/?text=' + encodeURIComponent((C.event && C.event.address) || '');
@@ -43,7 +46,9 @@
   })();
 
   // ---------- змейка мест ----------
-  (function () {
+  var snakeStarted = false;
+  function startSnake() {
+    if (snakeStarted) return; snakeStarted = true;
     var svg = $('#snake'); if (!svg) return;
     var d = 'M25 25 V165';
     for (var i = 1; i < 10; i++) {
@@ -88,7 +93,29 @@
       requestAnimationFrame(loop);
     }
     requestAnimationFrame(loop);
-  })();
+  }
+
+  // Сколько мест занято: с сервера (в режиме 'live') или из config.js
+  function applySeats(taken) {
+    TAKEN = Math.max(0, Math.min(TOTAL, Math.round(taken)));
+    LEFT = TOTAL - TAKEN;
+    maxQty = Math.max(1, LEFT);
+    if (state.qty > maxQty) state.qty = maxQty;
+    renderSeatLabels(); renderQty(); startSnake();
+  }
+  function loadSeats() {
+    if (!LIVE) { applySeats(TAKEN); return; }
+    var done = false;
+    var timer = setTimeout(function () { if (!done) { done = true; applySeats(TAKEN); } }, 3000);
+    fetch(C.apiBase + '/seats', { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+      .then(function (d) {
+        if (done) return; done = true; clearTimeout(timer);
+        // занятыми считаем оплаченные места и те, что сейчас держат на странице оплаты
+        applySeats((Number(d.taken) || 0) + (Number(d.reserved) || 0));
+      })
+      .catch(function () { if (!done) { done = true; clearTimeout(timer); applySeats(TAKEN); } });
+  }
 
   // ---------- слайды ----------
   var tick = 0;
@@ -212,14 +239,21 @@
     $('[data-method-title]').textContent = state.methodTitle;
     try { sessionStorage.setItem('collage-order', JSON.stringify({ name: data.name, email: data.email, qty: data.qty })); } catch (x) {}
 
-    if (C.paymentMode === 'robokassa' && C.createPaymentUrl) {
+    if (LIVE) {
       $('[data-demo-note]').hidden = true;
       openModal('paying');
-      // Сервер создаёт счёт в Робокассе (с подписью) и возвращает { url } страницы оплаты
-      fetch(C.createPaymentUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
-        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-        .then(function (res) { if (!res.url) throw new Error('no url'); window.location.href = res.url; })
-        .catch(function () { closeModal(); openModal('buy'); toast('Не получилось открыть оплату. Попробуйте ещё раз через минуту.'); });
+      // Сервер создаёт заказ, держит места и возвращает { url } страницы оплаты Робокассы
+      fetch(C.apiBase + '/create-payment', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
+        .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, status: r.status, body: j }; }); })
+        .then(function (res) {
+          if (res.ok && res.body.url) { window.location.href = res.body.url; return; }
+          openModal('buy');
+          if (res.status === 409) {
+            applySeats(TOTAL - (Number(res.body.left) || 0));
+            toast(res.body.left > 0 ? 'Осталось только ' + res.body.left + ' ' + seatsWord(res.body.left) : 'Места закончились');
+          } else toast('Не получилось открыть оплату. Попробуйте ещё раз через минуту.');
+        })
+        .catch(function () { openModal('buy'); toast('Не получилось открыть оплату. Проверьте интернет и попробуйте ещё раз.'); });
       return;
     }
     // Демо-режим
@@ -228,9 +262,14 @@
     setTimeout(function () { personalize(data); openModal('success'); }, 1800);
   });
 
-  // Возврат из Робокассы: index.html?paid=1 (Success URL)
+  // Возврат из Робокассы: Success URL — ?paid=1, Fail URL — ?failed=1
   (function () {
     var q = new URLSearchParams(location.search);
+    if (q.get('failed') === '1') {
+      history.replaceState(null, '', location.pathname);
+      setTimeout(function () { openModal('buy'); toast('Оплата не прошла — попробуйте ещё раз или выберите другой способ'); }, 300);
+      return;
+    }
     if (q.get('paid') === '1' || q.has('InvId')) {
       var saved = {}; try { saved = JSON.parse(sessionStorage.getItem('collage-order') || '{}'); } catch (x) {}
       personalize(saved);
@@ -266,5 +305,5 @@
     if (navigator.clipboard) navigator.clipboard.writeText(text + ' ' + url).then(function () { toast('Ссылка скопирована'); });
   });
 
-  renderQty();
+  loadSeats();
 })();
