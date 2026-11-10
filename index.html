@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Коллажный вечер · 5 декабря · Москва</title>
+<meta name="description" content="Мини-лекция о коллаже, создание своего коллажа и бережный арт-разбор работ с арт-психологом. 5 декабря, 15:00, 10 мест.">
+<meta property="og:title" content="Коллажный вечер · 5 декабря">
+<meta property="og:description" content="Мини-лекция, практика и арт-разбор. Всего 10 мест.">
+<meta property="og:image" content="img/collage1.jpg">
+<meta name="theme-color" content="#000000">
+<link rel="preload" href="fonts/onest-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="page">
+<main class="bento">
+
+<!-- ПРИВЕТСТВИЕ -->
+<section class="card s2" style="display:flex;flex-direction:column;gap:18px;min-height:300px">
+<div style="display:flex;align-items:center;gap:12px">
+<div style="width:30px;height:30px;border-radius:50%;background:var(--accent)"></div>
+<div style="display:flex;flex-direction:column">
+<span style="font-size:14px;font-weight:600">Коллажный вечер</span>
+<span style="font-size:12px;color:var(--muted)">мини-лекция · практика · арт-разбор</span>
+</div>
+</div>
+<hr class="rule">
+<h1 style="margin:4px 0 0;font-size:clamp(28px,3vw,40px);font-weight:600;line-height:1.1;letter-spacing:-.02em">Приходи <span id="typed" style="color:var(--muted)">вырезать</span><span class="caret" aria-hidden="true"></span></h1>
+<p style="margin:0;font-size:16px;line-height:1.5;color:#c9c9c9;max-width:560px">Привет! Это тёплый вечер, где из журнальных обрывков, цвета и фактур рождается твоя личная история. Опыт и «художественный талант» не нужны — только ножницы, клей и немного любопытства.</p>
+<div style="margin-top:auto;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--muted)">
+<span>5 декабря · суббота</span>
+<span>начало в 15:00</span>
+</div>
+</section>
+
+<!-- ПРОГРАММА -->
+<section id="program" class="card" style="display:flex;flex-direction:column;gap:16px">
+<h2 class="lbl" style="margin:0;font-weight:400">Как пройдёт вечер</h2>
+<div style="display:flex;flex-direction:column;gap:14px;margin-top:4px">
+<div style="display:flex;gap:14px;align-items:flex-start"><span class="accent-text" style="font-size:12px;font-weight:600;padding-top:3px">01</span><div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:16px;font-weight:600">Мини-лекция</span><span style="font-size:13px;color:#9a9a9a;line-height:1.4">Что такое коллаж и почему он так много говорит о нас</span></div></div>
+<hr class="rule">
+<div style="display:flex;gap:14px;align-items:flex-start"><span class="accent-text" style="font-size:12px;font-weight:600;padding-top:3px">02</span><div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:16px;font-weight:600">Создаём коллажи</span><span style="font-size:13px;color:#9a9a9a;line-height:1.4">Режем, клеим, собираем — каждый свою работу</span></div></div>
+<hr class="rule">
+<div style="display:flex;gap:14px;align-items:flex-start"><span class="accent-text" style="font-size:12px;font-weight:600;padding-top:3px">03</span><div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:16px;font-weight:600">Арт-разбор</span><span style="font-size:13px;color:#9a9a9a;line-height:1.4">Арт-психолог бережно разбирает работы гостей</span></div></div>
+</div>
+</section>
+
+<!-- МЕСТА -->
+<section class="card r2" style="display:flex;flex-direction:column;gap:16px">
+<span class="lbl">Немного статистики</span>
+<hr class="rule" style="margin-top:40px">
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span class="lbl">Места</span><span style="font-size:13px;color:var(--muted)">всего 10</span></div>
+<svg id="snake" role="img" aria-label="Занято мест" viewBox="0 0 590 220" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;display:block">
+<path class="snake-bg" stroke="#2a2a2a" stroke-width="50" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+<path class="snake-fg" stroke="var(--accent)" stroke-opacity="0" stroke-width="50" stroke-linecap="round" stroke-linejoin="round" fill="none" pathLength="10" stroke-dasharray="0 10"></path>
+</svg>
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:8px;margin-top:8px">
+<div style="display:flex;align-items:baseline;gap:4px"><span id="seats-filled" style="font-size:64px;font-weight:600;line-height:1;letter-spacing:-.04em">0</span><span style="font-size:24px;color:#6f6f6f">/10</span></div>
+<span style="font-size:13px;color:var(--muted);padding-bottom:8px">занято</span>
+</div>
+<div style="display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:#1b1b1b">
+<span class="pulse" style="width:10px;height:10px;border-radius:50%;background:var(--accent);flex:none"></span>
+<span data-remaining style="font-size:14px;font-weight:500"></span>
+</div>
+<button type="button" data-open="buy" class="btn btn-light" style="margin-top:auto;height:48px;font-size:15px">Занять место</button>
+</section>
+
+<!-- О НАС -->
+<section id="about" class="card s3" style="display:flex;flex-direction:column;gap:18px;min-height:280px">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
+<h2 class="lbl" style="margin:0;font-weight:400">О нас</h2>
+<svg aria-hidden="true" width="56" height="56" viewBox="0 0 56 56" fill="none" stroke="#5a5a5a" stroke-width="7"><path d="M10 46 L44 12"/><path d="M18 12 H44 V38" stroke-linejoin="miter"/></svg>
+</div>
+<p style="margin:0;font-size:clamp(22px,2.3vw,32px);line-height:1.25;font-weight:500;letter-spacing:-.015em;max-width:920px">Мы — дизайнер и арт-психолог. Соединили то, что любим сами: <span style="color:var(--muted)">визуальный язык коллажа</span> и <span style="color:var(--muted)">бережный разговор о том, что он рассказывает про нас.</span></p>
+<div style="margin-top:auto;display:flex;flex-direction:column;gap:14px">
+<hr class="rule">
+<div style="display:flex;flex-wrap:wrap;gap:8px"><span class="chip">Мини-лекция о коллаже</span><span class="chip">Практика руками</span><span class="chip">Арт-терапевтический разбор</span><span class="chip">Камерно: 10 мест</span><span class="chip">Без опыта</span></div>
+</div>
+</section>
+
+<!-- СТАСЯ -->
+<section id="stasya" class="card s2" style="display:flex;flex-direction:column;gap:12px;min-height:560px">
+<div style="display:flex;justify-content:space-between"><span class="lbl">Дизайнер · 6 лет опыта</span><span class="lbl">01</span></div>
+<h2 class="wordmark" style="font-size:clamp(64px,7.4vw,124px);font-weight:400">
+<span class="sr-only">Стася</span>
+<span aria-hidden="true" class="cut" style="font-family:'Playfair Display',serif;font-style:italic;font-weight:700;background:#efe6d6;color:#141414;padding:.02em .16em .08em;transform:rotate(-6deg) translateY(.04em);clip-path:polygon(0 4%,9% 0,22% 5%,38% 1%,55% 6%,71% 0,86% 4%,100% 1%,98% 30%,100% 62%,97% 100%,80% 96%,62% 100%,44% 95%,27% 100%,10% 96%,0 100%,2% 66%,0 34%)">С</span><span aria-hidden="true" class="cut" style="font-family:Unbounded,sans-serif;font-weight:800;background:var(--accent);color:#0a0a0a;padding:.06em .14em .1em;font-size:.78em;margin-left:-.06em;transform:rotate(5deg) translateY(-.1em)">т</span><span aria-hidden="true" class="cut" style="font-family:'Yeseva One',serif;background:#2668fd;color:#fde99b;padding:.02em .16em .1em;font-size:1.05em;margin-left:-.04em;transform:rotate(-3deg) translateY(.08em);clip-path:polygon(2% 0,100% 3%,97% 48%,100% 100%,0 97%,3% 52%)">а</span><span aria-hidden="true" class="cut" style="font-family:'Rubik Mono One',sans-serif;background:#fde99b;color:#141414;padding:.1em .14em;font-size:.66em;margin-left:-.05em;transform:rotate(8deg) translateY(-.18em)">с</span><span aria-hidden="true" class="cut" style="font-family:Oswald,sans-serif;font-weight:700;background:#e8e8e8;color:#c94245;padding:0 .16em .04em;font-size:1.12em;margin-left:-.03em;transform:rotate(-5deg) translateY(.06em);clip-path:polygon(0 2%,14% 0,30% 4%,48% 0,66% 3%,84% 0,100% 3%,100% 97%,84% 100%,66% 96%,48% 100%,30% 97%,14% 100%,0 97%)">я</span>
+<button type="button" class="arrow-btn" data-open="stasya" aria-label="Подробнее о Стасе"><svg aria-hidden="true" viewBox="0 0 56 56" fill="none" stroke="var(--accent)" stroke-width="6"><path d="M10 46 L44 12"/><path d="M18 12 H44 V38" stroke-linejoin="miter"/></svg></button>
+</h2>
+<div style="margin-top:auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px">
+<div style="display:flex;flex-direction:column;gap:8px;max-width:300px;flex:1 1 220px"><span style="font-size:20px;font-weight:600">Глушкова Стася</span><span style="font-size:15px;line-height:1.45;color:#b0b0b0">Дизайнерка с 6-летним стажем. Расскажу, как из случайных обрывков собирается образ, — и покажу, какие коллажи создаю сама.</span></div>
+<div style="display:flex;align-items:center;gap:6px;flex:none">
+<span aria-hidden="true" class="paren">(</span>
+<div class="rotator" data-rotator="stasya" style="width:230px;height:240px">
+<img src="img/stasya.jpg" alt="Стася" style="--rot:rotate(-2deg);transform:var(--rot);border-radius:6px">
+<img src="img/collage1.jpg" alt="Коллаж Стаси: синий лист, дом и чёрные обрывки" loading="lazy" style="--rot:rotate(-3deg);transform:var(--rot)">
+<img src="img/collage2.jpg" alt="Коллаж Стаси: цветы и спящее лицо" loading="lazy" style="--rot:rotate(2deg);transform:var(--rot)">
+<img src="img/collage3.jpg" alt="Коллаж Стаси: старинное фото на зелёном фоне" loading="lazy" style="--rot:rotate(-2deg);transform:var(--rot)">
+<img src="img/collage4.jpg" alt="Коллаж Стаси: Офелия и грибы на красном в горошек" loading="lazy" style="--rot:rotate(3deg);transform:var(--rot)">
+</div>
+<span aria-hidden="true" class="paren">)</span>
+</div>
+</div>
+<hr class="rule" style="margin-top:8px">
+<div style="display:flex;flex-wrap:wrap;gap:8px"><span class="chip">Коллаж</span><span class="chip">Графический дизайн</span><span class="chip">Визуальные истории</span><span class="chip">Ведёт лекцию и практику</span></div>
+</section>
+
+<!-- ПОЛИНА -->
+<section id="polina" class="card s2" style="display:flex;flex-direction:column;gap:12px;min-height:560px">
+<div style="display:flex;justify-content:space-between"><span class="lbl">Арт-психолог · МГУ, психология</span><span class="lbl">02</span></div>
+<h2 class="wordmark" style="font-size:clamp(56px,6.4vw,108px);font-weight:400">
+<span class="sr-only">Полина</span>
+<span aria-hidden="true" class="cut" style="font-family:Oswald,sans-serif;font-weight:700;background:#9bd8a9;color:#141414;padding:0 .16em .04em;font-size:1.1em;transform:rotate(-4deg) translateY(.05em);clip-path:polygon(0 3%,16% 0,34% 4%,52% 0,70% 3%,86% 0,100% 4%,98% 50%,100% 97%,82% 100%,64% 96%,46% 100%,28% 97%,10% 100%,0 96%,2% 50%)">П</span><span aria-hidden="true" class="cut" style="font-family:'Playfair Display',serif;font-style:italic;font-weight:700;background:#141414;color:#efe6d6;border:2px solid #efe6d6;padding:.02em .14em .08em;font-size:.82em;margin-left:-.05em;transform:rotate(6deg) translateY(-.12em)">о</span><span aria-hidden="true" class="cut" style="font-family:Unbounded,sans-serif;font-weight:800;background:#f6b7c9;color:#2a0f1c;padding:.06em .14em .1em;font-size:.86em;margin-left:-.04em;transform:rotate(-7deg) translateY(.1em)">л</span><span aria-hidden="true" class="cut" style="font-family:'Yeseva One',serif;background:#efe6d6;color:#2668fd;padding:.02em .16em .1em;font-size:1.04em;margin-left:-.04em;transform:rotate(3deg) translateY(-.04em);clip-path:polygon(3% 0,100% 2%,97% 50%,100% 100%,0 98%,3% 50%)">и</span><span aria-hidden="true" class="cut" style="font-family:'Rubik Mono One',sans-serif;background:var(--accent);color:#0a0a0a;padding:.1em .14em;font-size:.64em;margin-left:-.05em;transform:rotate(-9deg) translateY(-.2em)">н</span><span aria-hidden="true" class="cut" style="font-family:'Playfair Display',serif;font-style:italic;font-weight:700;background:#fde99b;color:#c94245;padding:.02em .16em .08em;font-size:.98em;margin-left:-.03em;transform:rotate(5deg) translateY(.08em);clip-path:polygon(0 5%,12% 0,28% 6%,44% 1%,60% 5%,76% 0,90% 4%,100% 1%,97% 36%,100% 70%,98% 100%,80% 96%,60% 100%,40% 95%,20% 100%,0 97%,3% 64%,0 30%)">а</span>
+<button type="button" class="arrow-btn" data-open="polina" aria-label="Подробнее о Полине"><svg aria-hidden="true" viewBox="0 0 56 56" fill="none" stroke="var(--accent)" stroke-width="6"><path d="M10 46 L44 12"/><path d="M18 12 H44 V38" stroke-linejoin="miter"/></svg></button>
+</h2>
+<div style="margin-top:auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px">
+<div style="display:flex;flex-direction:column;gap:8px;max-width:300px;flex:1 1 220px"><span style="font-size:20px;font-weight:600">Полина [Фамилия]</span><span style="font-size:15px;line-height:1.45;color:#b0b0b0">Арт-психолог с богатым опытом и высшим образованием МГУ по специальности «Психология». Бережно разберёт работы гостей и поможет увидеть, что стоит за образами.</span></div>
+<div style="display:flex;align-items:center;gap:6px;flex:none">
+<span aria-hidden="true" class="paren">(</span>
+<div class="rotator" data-rotator="polina" style="width:190px;height:230px">
+<div class="ph" style="--rot:rotate(-3deg);transform:var(--rot)">Фото: гости за работой<small>1 / 3</small></div>
+<div class="ph" style="--rot:rotate(2deg);transform:var(--rot)">Фото: Полина на разборе<small>2 / 3</small></div>
+<div class="ph" style="--rot:rotate(-1deg);transform:var(--rot)">Фото: коллажи гостей<small>3 / 3</small></div>
+</div>
+<span aria-hidden="true" class="paren">)</span>
+</div>
+</div>
+<hr class="rule" style="margin-top:8px">
+<div style="display:flex;flex-wrap:wrap;gap:8px"><span class="chip">Арт-терапия</span><span class="chip">МГУ, психология</span><span class="chip">Разбор работ</span><span class="chip">Бережно и без оценок</span></div>
+</section>
+
+<!-- МЕСТО -->
+<section id="place" class="card s3" style="min-height:340px">
+<div class="place-grid">
+<div style="display:flex;flex-direction:column;gap:14px">
+<h2 class="lbl" style="margin:0;font-weight:400">Где встречаемся</h2>
+<span style="font-size:clamp(24px,2.4vw,34px);font-weight:600;line-height:1.15;letter-spacing:-.015em">Арт-пространство «[Название]»</span>
+<hr class="rule">
+<div style="display:flex;justify-content:space-between;gap:12px"><span class="lbl">Адрес</span><span style="font-size:14px;text-align:right">Москва, ул. Покровка, 27</span></div>
+<hr class="rule">
+<div style="display:flex;justify-content:space-between;gap:12px"><span class="lbl">Метро</span><span style="font-size:14px;text-align:right">[ближайшая станция]</span></div>
+<hr class="rule">
+<div style="display:flex;justify-content:space-between;gap:12px"><span class="lbl">Как найти</span><span style="font-size:14px;text-align:right">[вход, этаж, ориентир]</span></div>
+<a data-map-link href="#" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:auto;height:46px;padding:0 20px;font-size:14px;align-self:flex-start">Открыть в Яндекс Картах <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+</div>
+<div style="position:relative;min-height:280px;border-radius:10px;overflow:hidden;border:1px solid #2c2c2c;background:#0e0e0e">
+<svg aria-hidden="true" viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%">
+<rect width="600" height="360" fill="#0e0e0e"/>
+<path d="M-20 300 C 120 250, 200 330, 330 290 S 520 230, 640 270" stroke="#14202b" stroke-width="34" fill="none"/>
+<rect x="420" y="40" width="130" height="90" rx="10" fill="#131c15"/><rect x="40" y="60" width="90" height="70" rx="8" fill="#131c15"/>
+<path d="M0 170 L600 140" stroke="#2c2c2c" stroke-width="14"/><path d="M210 0 L250 360" stroke="#2c2c2c" stroke-width="12"/>
+<path d="M0 60 L600 20" stroke="#222" stroke-width="6"/><path d="M0 240 L600 210" stroke="#222" stroke-width="6"/>
+<path d="M90 0 L120 360" stroke="#222" stroke-width="5"/><path d="M370 0 L390 360" stroke="#262626" stroke-width="8"/>
+<path d="M500 0 L470 360" stroke="#222" stroke-width="5"/><path d="M250 170 L370 100 L460 0" stroke="#222" stroke-width="5" fill="none"/>
+<text x="400" y="128" fill="#5c5c5c" font-size="13" font-family="Onest, sans-serif" transform="rotate(-3 400 128)">ул. Покровка</text>
+</svg>
+<div style="position:absolute;left:50%;top:44%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center;gap:6px">
+<span style="padding:6px 10px;border-radius:8px;background:#e8e8e8;color:#0a0a0a;font-size:12px;font-weight:600;white-space:nowrap">Мы здесь</span>
+<span class="pulse" style="width:18px;height:18px;border-radius:50%;background:var(--accent);border:3px solid #0e0e0e"></span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- СТОИМОСТЬ -->
+<section id="price" class="card" style="display:flex;flex-direction:column;gap:14px;min-height:340px">
+<h2 class="lbl" style="margin:0;font-weight:400">Стоимость</h2>
+<div style="display:flex;align-items:baseline;gap:6px;margin-top:12px"><span style="font-size:clamp(48px,4.6vw,68px);font-weight:600;line-height:1;letter-spacing:-.04em">2 000</span><span style="font-size:28px;color:var(--muted)">₽</span></div>
+<span style="font-size:14px;color:#9a9a9a">за одно место</span>
+<hr class="rule">
+<div style="display:flex;flex-direction:column;gap:8px;font-size:14px;color:#c9c9c9"><span>— мини-лекция о коллаже</span><span>— создание своего коллажа</span><span>— разбор работы арт-психологом</span></div>
+<button type="button" data-open="buy" class="btn btn-accent" style="margin-top:auto;height:54px;font-size:16px">Купить билет</button>
+<span style="font-size:12px;color:var(--muted);text-align:center">Оплата онлайн через Робокассу</span>
+</section>
+
+<!-- БОЛЬШАЯ КНОПКА -->
+<button type="button" id="buy" data-open="buy" class="card s4 cta">
+<span style="display:flex;flex-direction:column;gap:10px">
+<span style="font-size:14px;font-weight:600;color:#2a1206"><span data-remaining></span> · 2 000 ₽</span>
+<span class="sr-only">Купить билет</span>
+<span aria-hidden="true" style="display:flex;flex-wrap:wrap;align-items:center;column-gap:.32em;row-gap:.12em;font-size:clamp(44px,6.2vw,108px);line-height:1;padding:.08em 0"><span style="display:inline-flex;align-items:center;white-space:nowrap"><span class="cut" style="font-family:'Playfair Display',serif;font-style:italic;font-weight:700;background:#efe6d6;color:#141414;padding:.04em .14em .08em;font-size:1.05em;transform:rotate(-5deg) translateY(.04em);clip-path:polygon(0 4%,12% 0,28% 5%,44% 0,60% 4%,76% 0,90% 5%,100% 1%,98% 50%,100% 98%,84% 100%,66% 95%,48% 100%,30% 96%,12% 100%,0 97%,2% 50%)">К</span><span class="cut" style="font-family:Unbounded,sans-serif;font-weight:800;background:#141414;color:#efe6d6;padding:.04em .14em .08em;font-size:.78em;margin-left:-.04em;transform:rotate(6deg) translateY(-.1em)">у</span><span class="cut" style="font-family:'Yeseva One',serif;background:#2668fd;color:#fde99b;padding:.04em .14em .08em;font-size:.98em;margin-left:-.04em;transform:rotate(-3deg) translateY(.06em);clip-path:polygon(3% 0,100% 2%,97% 50%,100% 100%,0 98%,3% 50%)">п</span><span class="cut" style="font-family:'Rubik Mono One',sans-serif;background:#fde99b;color:#141414;padding:.04em .14em .08em;font-size:.62em;margin-left:-.04em;transform:rotate(8deg) translateY(-.18em)">и</span><span class="cut" style="font-family:Oswald,sans-serif;font-weight:700;background:#e8e8e8;color:#c94245;padding:.04em .14em .08em;font-size:1.1em;margin-left:-.04em;transform:rotate(-6deg) translateY(.05em);clip-path:polygon(0 4%,12% 0,28% 5%,44% 0,60% 4%,76% 0,90% 5%,100% 1%,98% 50%,100% 98%,84% 100%,66% 95%,48% 100%,30% 96%,12% 100%,0 97%,2% 50%)">т</span><span class="cut" style="font-family:'Playfair Display',serif;font-style:italic;font-weight:700;background:#9bd8a9;color:#141414;padding:.04em .14em .08em;font-size:.86em;margin-left:-.04em;transform:rotate(4deg) translateY(-.06em)">ь</span></span><span style="display:inline-flex;align-items:center;white-space:nowrap"><span class="cut" style="font-family:Oswald,sans-serif;font-weight:700;background:#141414;color:#fde99b;padding:.04em .14em .08em;font-size:1.08em;transform:rotate(5deg) translateY(.02em);clip-path:polygon(0 4%,12% 0,28% 5%,44% 0,60% 4%,76% 0,90% 5%,100% 1%,98% 50%,100% 98%,84% 100%,66% 95%,48% 100%,30% 96%,12% 100%,0 97%,2% 50%)">б</span><span class="cut" style="font-family:'Yeseva One',serif;background:#f6b7c9;color:#2a0f1c;padding:.04em .14em .08em;font-size:.9em;margin-left:-.04em;transform:rotate(-7deg) translateY(.1em);clip-path:polygon(3% 0,100% 2%,97% 50%,100% 100%,0 98%,3% 50%)">и</span><span class="cut" style="font-family:Unbounded,sans-serif;font-weight:800;background:#efe6d6;color:#2668fd;padding:.04em .14em .08em;font-size:.8em;margin-left:-.04em;transform:rotate(3deg) translateY(-.12em)">л</span><span class="cut" style="font-family:'Rubik Mono One',sans-serif;background:#141414;color:#efe6d6;padding:.04em .14em .08em;font-size:.64em;margin-left:-.04em;transform:rotate(-8deg) translateY(-.2em)">е</span><span class="cut" style="font-family:'Playfair Display',serif;font-style:italic;font-weight:700;background:#fde99b;color:#c94245;padding:.04em .14em .08em;font-size:1.02em;margin-left:-.04em;transform:rotate(6deg) translateY(.06em);clip-path:polygon(0 4%,12% 0,28% 5%,44% 0,60% 4%,76% 0,90% 5%,100% 1%,98% 50%,100% 98%,84% 100%,66% 95%,48% 100%,30% 96%,12% 100%,0 97%,2% 50%)">т</span></span></span>
+</span>
+<svg class="cta-arrow" aria-hidden="true" width="140" height="140" viewBox="0 0 56 56" fill="none" stroke="#0a0a0a" stroke-width="6"><path d="M10 46 L44 12"/><path d="M18 12 H44 V38" stroke-linejoin="miter"/></svg>
+</button>
+
+</main>
+
+<div style="height:96px"></div>
+<nav class="quickbar" aria-label="Быстрая навигация">
+<div>
+<a href="#about" class="btn">О нас</a>
+<a href="#place" class="btn">Где</a>
+<button type="button" data-open="buy" class="btn btn-accent" style="height:44px;padding:0 22px;font-size:15px">Купить билет · <span data-remaining-short></span></button>
+</div>
+</nav>
+</div>
+
+<!-- ============ МОДАЛКИ ============ -->
+
+<!-- О СТАСЕ -->
+<div class="overlay" data-modal="stasya" hidden>
+<div class="dialog modal-grid pop-in" role="dialog" aria-modal="true" aria-labelledby="about-title">
+<div class="modal-side" style="padding:20px;display:flex;flex-direction:column;gap:12px">
+<img src="img/stasya.jpg" alt="Стася Глушкова" loading="lazy" style="width:100%;height:360px;object-fit:cover;object-position:50% 30%;border-radius:12px;display:block">
+<span class="lbl" style="margin-top:6px">Мои коллажи</span>
+<div class="thumbs">
+<div class="thumb"><img src="img/collage1.jpg" alt="" loading="lazy"></div>
+<div class="thumb"><img src="img/collage2.jpg" alt="" loading="lazy"></div>
+<div class="thumb"><img src="img/collage3.jpg" alt="" loading="lazy"></div>
+<div class="thumb"><img src="img/collage4.jpg" alt="" loading="lazy"></div>
+</div>
+</div>
+<div class="modal-body">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><span class="lbl">Ведущая · мини-лекция и практика</span><button type="button" class="xbtn" data-close aria-label="Закрыть"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+<div style="display:flex;flex-direction:column;gap:8px"><h2 id="about-title" style="margin:0;font-size:clamp(28px,3.2vw,40px);font-weight:600;line-height:1.05;letter-spacing:-.02em">Глушкова Стася</h2><span style="font-size:15px;color:#b0b0b0">Дизайнерка · 6 лет в профессии</span></div>
+<p style="margin:0;font-size:16px;line-height:1.55;color:#d6d6d6">Коллаж для меня — способ думать руками. Из случайных обрывков журналов, старых фотографий и цветной бумаги собирается образ, который сложно было бы нарисовать или описать словами. Шесть лет я работаю дизайнеркой, а коллажи — моё любимое место, где не нужно быть аккуратной.</p>
+<div style="display:flex;flex-direction:column;gap:10px"><span class="h-sm">На вечере я</span>
+<div class="steps"><div><b>01</b><span>расскажу, что такое коллаж и почему он так много говорит о нас</span></div><div><b>02</b><span>покажу свои работы и приёмы: рваный край, цветовые пятна, неожиданные сочетания</span></div><div><b>03</b><span>буду рядом во время практики и помогу, если застрянете</span></div></div></div>
+<div class="facts"><div><span class="k">Опыт</span><span>6 лет в дизайне</span></div><div><span class="k">Чем занимаюсь</span><span>коллаж, графический дизайн, визуальные истории</span></div></div>
+<div style="margin-top:auto;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px"><button type="button" class="btn btn-outline" data-close style="height:50px;padding:0 22px;font-size:15px">Закрыть</button><button type="button" class="btn btn-accent" data-open="buy" style="height:50px;padding:0 24px;font-size:15px">Купить билет</button></div>
+</div>
+</div>
+</div>
+
+<!-- О ПОЛИНЕ -->
+<div class="overlay" data-modal="polina" hidden>
+<div class="dialog modal-grid pop-in" role="dialog" aria-modal="true" aria-labelledby="aboutp-title">
+<div class="modal-side" style="padding:20px;display:flex;flex-direction:column;gap:12px">
+<div class="ph ph-big">Фото Полины</div>
+<span class="lbl" style="margin-top:6px">С наших встреч</span>
+<div class="thumbs"><div class="ph ph-sm">фото с гостями</div><div class="ph ph-sm">фото с разбора</div></div>
+</div>
+<div class="modal-body">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><span class="lbl">Ведущая · арт-разбор работ</span><button type="button" class="xbtn" data-close aria-label="Закрыть"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+<div style="display:flex;flex-direction:column;gap:8px"><h2 id="aboutp-title" style="margin:0;font-size:clamp(28px,3.2vw,40px);font-weight:600;line-height:1.05;letter-spacing:-.02em">Полина [Фамилия]</h2><span style="font-size:15px;color:#b0b0b0">Арт-психолог · МГУ, психология</span></div>
+<p style="margin:0;font-size:16px;line-height:1.55;color:#d6d6d6">Для меня коллаж — бережный способ поговорить о себе без лишних слов. Образы, цвета и то, как мы их соединяем, часто рассказывают больше, чем мы планировали. Я помогаю это увидеть — спокойно, без оценок и диагнозов.</p>
+<div style="display:flex;flex-direction:column;gap:10px"><span class="h-sm">На вечере я</span>
+<div class="steps"><div><b>01</b><span>расскажу, как смотреть на свой коллаж и что в нём можно заметить</span></div><div><b>02</b><span>бережно разберу работы гостей — только по желанию, рассказывать о себе не обязательно</span></div><div><b>03</b><span>отвечу на вопросы про арт-терапию и то, как её можно пробовать дальше</span></div></div></div>
+<div class="facts"><div><span class="k">Образование</span><span>МГУ, специальность «Психология»</span></div><div><span class="k">Опыт</span><span>[сколько лет практики]</span></div></div>
+<div style="margin-top:auto;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px"><button type="button" class="btn btn-outline" data-close style="height:50px;padding:0 22px;font-size:15px">Закрыть</button><button type="button" class="btn btn-accent" data-open="buy" style="height:50px;padding:0 24px;font-size:15px">Купить билет</button></div>
+</div>
+</div>
+</div>
+
+<!-- ОКНО ПОКУПКИ -->
+<div class="overlay" data-modal="buy" hidden>
+<div class="dialog modal-grid pop-in" role="dialog" aria-modal="true" aria-labelledby="buy-title">
+<div class="modal-side" style="padding:24px;display:flex;flex-direction:column;gap:16px;background:#101010">
+<span class="lbl">Ваш билет</span>
+<div class="rotator" data-rotator="collages" style="height:210px;border-radius:12px;background:#181818;border:1px solid #262626">
+<img src="img/collage1.jpg" alt="" style="inset:16px;width:calc(100% - 32px);height:calc(100% - 32px);--rot:rotate(-3deg);transform:var(--rot)">
+<img src="img/collage2.jpg" alt="" loading="lazy" style="inset:16px;width:calc(100% - 32px);height:calc(100% - 32px);--rot:rotate(2deg);transform:var(--rot)">
+<img src="img/collage3.jpg" alt="" loading="lazy" style="inset:16px;width:calc(100% - 32px);height:calc(100% - 32px);--rot:rotate(-2deg);transform:var(--rot)">
+<img src="img/collage4.jpg" alt="" loading="lazy" style="inset:16px;width:calc(100% - 32px);height:calc(100% - 32px);--rot:rotate(3deg);transform:var(--rot)">
+</div>
+<span style="font-size:22px;font-weight:600;letter-spacing:-.01em">Коллажный вечер</span>
+<div style="display:flex;flex-direction:column;gap:10px;font-size:14px">
+<div style="display:flex;justify-content:space-between;gap:12px"><span class="lbl">Когда</span><span style="text-align:right">5 декабря, сб · 15:00</span></div>
+<div style="display:flex;justify-content:space-between;gap:12px"><span class="lbl">Где</span><span style="text-align:right">Москва, ул. Покровка, 27</span></div>
+</div>
+<hr class="rule">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+<span class="flabel" id="qty-label">Количество мест</span>
+<div style="display:flex;align-items:center;gap:12px" role="group" aria-labelledby="qty-label">
+<button type="button" class="step" data-qty="-1" aria-label="Меньше">−</button>
+<span id="qty" aria-live="polite" style="min-width:20px;text-align:center;font-size:18px;font-weight:600">1</span>
+<button type="button" class="step" data-qty="1" aria-label="Больше">+</button>
+</div>
+</div>
+<div style="margin-top:auto;display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span class="flabel">Итого</span><span data-total style="font-size:32px;font-weight:600;letter-spacing:-.03em">2 000 ₽</span></div>
+<span data-remaining style="font-size:12px;color:var(--muted)"></span>
+</div>
+<form id="buy-form" novalidate style="padding:24px;display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><h2 id="buy-title" style="margin:0;font-size:22px;font-weight:600;letter-spacing:-.01em">Оформление билета</h2><button type="button" class="xbtn" data-close aria-label="Закрыть"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+<div style="display:flex;flex-direction:column;gap:6px">
+<label for="f-name" class="flabel">Имя и фамилия</label>
+<input id="f-name" name="name" class="field" type="text" autocomplete="name" placeholder="Анна Иванова" aria-describedby="e-name">
+<span id="e-name" class="ferr" hidden>Напишите, как к вам обращаться</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px">
+<label for="f-email" class="flabel">Почта — пришлём билет и чек</label>
+<input id="f-email" name="email" class="field" type="email" autocomplete="email" placeholder="anna@mail.ru" aria-describedby="e-email">
+<span id="e-email" class="ferr" hidden>Проверьте почту — в ней должен быть знак @</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px">
+<label for="f-phone" class="flabel">Телефон</label>
+<input id="f-phone" name="phone" class="field" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7 900 000-00-00" aria-describedby="e-phone">
+<span id="e-phone" class="ferr" hidden>Нужен номер из 10–11 цифр</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<span id="pm-label" class="flabel">Способ оплаты</span>
+<div role="group" aria-labelledby="pm-label" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px">
+<button type="button" class="pm" data-method="card" aria-pressed="true"><span class="ic"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 15h4"/></svg></span><span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:14px;font-weight:600">Картой</span><span style="font-size:12px;color:var(--muted);line-height:1.3">Любая карта российского банка</span></span></button>
+<button type="button" class="pm" data-method="sbp" aria-pressed="false"><span class="ic"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3.5" y="3.5" width="6.5" height="6.5" rx="1"/><rect x="14" y="3.5" width="6.5" height="6.5" rx="1"/><rect x="3.5" y="14" width="6.5" height="6.5" rx="1"/><path d="M14 14h2.5v2.5H14zM18 18h2.5v2.5H18zM14 20.5h2M20.5 14v2"/></svg></span><span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:14px;font-weight:600">СБП</span><span style="font-size:12px;color:var(--muted);line-height:1.3">QR-код или приложение банка</span></span></button>
+<button type="button" class="pm" data-method="tpay" aria-pressed="false"><span class="ic"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span><span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:14px;font-weight:600">T-Pay</span><span style="font-size:12px;color:var(--muted);line-height:1.3">В приложении Т-Банка</span></span></button>
+<button type="button" class="pm" data-method="sberpay" aria-pressed="false"><span class="ic"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span><span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:14px;font-weight:600">SberPay</span><span style="font-size:12px;color:var(--muted);line-height:1.3">В приложении СберБанка</span></span></button>
+</div>
+</div>
+<label style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#b0b0b0;line-height:1.4;cursor:pointer">
+<input id="f-consent" type="checkbox" style="width:18px;height:18px;margin:1px 0 0;accent-color:var(--accent);flex:none" aria-describedby="e-consent">
+<span>Согласен(на) на обработку персональных данных и с условиями <a href="#oferta">публичной оферты</a></span>
+</label>
+<span id="e-consent" class="ferr" hidden style="margin-top:-8px">Без согласия не получится оформить билет</span>
+<button type="submit" class="btn btn-accent" style="height:56px;font-size:16px;margin-top:4px">Оплатить <span data-total>2 000 ₽</span></button>
+<span style="font-size:12px;color:var(--muted);text-align:center;line-height:1.4">Оплата проходит на защищённой странице Робокассы. Чек придёт на почту автоматически.</span>
+</form>
+</div>
+</div>
+
+<!-- ПЕРЕХОД К ОПЛАТЕ -->
+<div class="overlay center" data-modal="paying" hidden>
+<div class="pop-in" role="status" style="display:flex;flex-direction:column;align-items:center;gap:16px;padding:32px 40px;background:var(--card);border:1px solid var(--line);border-radius:16px;text-align:center">
+<span class="spin"></span>
+<span style="font-size:17px;font-weight:600">Переходим к оплате</span>
+<span style="font-size:13px;color:var(--muted)">Открываем страницу Робокассы · <span data-method-title>Картой</span></span>
+<span data-demo-note hidden style="font-size:12px;color:#ffb199;max-width:280px">Демо-режим: Робокасса ещё не подключена, деньги не списываются.</span>
+</div>
+</div>
+
+<!-- ПОСЛЕ ОПЛАТЫ -->
+<div class="overlay" data-modal="success" hidden>
+<div class="dialog modal-grid pop-in" role="dialog" aria-modal="true" aria-labelledby="ok-title">
+<div class="modal-side">
+<div class="rotator" data-rotator="collages" style="height:460px">
+<img src="img/collage1.jpg" alt="" style="inset:44px;width:calc(100% - 88px);height:calc(100% - 88px);--rot:rotate(-3deg);transform:var(--rot)">
+<img src="img/collage2.jpg" alt="" loading="lazy" style="inset:44px;width:calc(100% - 88px);height:calc(100% - 88px);--rot:rotate(2deg);transform:var(--rot)">
+<img src="img/collage3.jpg" alt="" loading="lazy" style="inset:44px;width:calc(100% - 88px);height:calc(100% - 88px);--rot:rotate(-2deg);transform:var(--rot)">
+<img src="img/collage4.jpg" alt="" loading="lazy" style="inset:44px;width:calc(100% - 88px);height:calc(100% - 88px);--rot:rotate(3deg);transform:var(--rot)">
+</div>
+</div>
+<div class="modal-body">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+<span style="display:inline-flex;align-items:center;gap:8px;height:32px;padding:0 12px;border-radius:999px;background:var(--accent);color:#0a0a0a;font-size:13px;font-weight:600"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Оплата прошла</span>
+<button type="button" class="xbtn" data-close aria-label="Закрыть"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<h2 id="ok-title" style="margin:0;font-size:clamp(26px,3vw,36px);font-weight:600;line-height:1.1;letter-spacing:-.02em">Ура, вы идёте на коллажный вечер!</h2>
+<p data-ok-line style="margin:0;font-size:15px;line-height:1.5;color:#b0b0b0">Билет и чек мы отправили на вашу почту. Ждём вас — ножницы и клей уже на столе.</p>
+</div>
+<div class="facts">
+<div><span class="k" style="width:84px">Когда</span><span>5 декабря, суббота · начало в 15:00</span></div>
+<div><span class="k" style="width:84px">Где</span><a data-map-link href="#" target="_blank" rel="noopener">Арт-пространство «[Название]», Москва, ул. Покровка, 27</a></div>
+<div data-tickets-row><span class="k" style="width:84px">Билеты</span><span data-tickets></span></div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<button type="button" class="ghost" data-calendar><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4M12 13v4M10 15h4"/></svg>Добавить в календарь</button>
+<button type="button" class="ghost" data-share><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3.5M7.5 8 12 3.5 16.5 8M5 13v6.5h14V13"/></svg>Позвать подругу</button>
+</div>
+<hr class="rule">
+<div style="display:flex;flex-direction:column;gap:10px"><span class="h-sm">Как пройдёт вечер</span>
+<div class="steps"><div><b>01</b><span>Знакомимся и слушаем мини-лекцию Стаси: что такое коллаж и почему он так много говорит о нас</span></div><div><b>02</b><span>Режем, рвём, клеим — каждый собирает свой коллаж. Подскажем, если застрянете</span></div><div><b>03</b><span>Полина бережно разбирает работы: что за образами, цветами и формами — без оценок «красиво/некрасиво»</span></div></div></div>
+<div style="display:flex;flex-direction:column;gap:8px"><span class="h-sm">Что взять с собой</span><span class="txt">Ничего обязательного: журналы, бумага, ножницы, клей и чай — на нас. Если хочется, возьмите свои картинки, открытки, билеты или фото, которые просятся в коллаж.</span></div>
+<div style="display:flex;flex-direction:column;gap:8px"><span class="h-sm">Когда приходить</span><span class="txt">Лучше за 10–15 минут до начала, чтобы спокойно раздеться, налить чай и выбрать место за столом. Накануне пришлём напоминание на почту.</span></div>
+<div style="display:flex;flex-direction:column;gap:8px"><span class="h-sm">Возврат и перенос</span><span class="txt">Если планы поменялись больше чем за 48 часов до начала — вернём деньги полностью. Позже — можно передать билет другу или перенести участие на следующий вечер. Просто напишите нам.</span></div>
+<div style="display:flex;flex-direction:column;gap:8px"><span class="h-sm">Остались вопросы?</span><span class="txt">Пишите в Telegram <a href="#contacts">[@ник]</a> или на почту <a href="#contacts">[почта]</a> — ответим в течение дня.</span></div>
+<div style="margin-top:4px;display:flex;justify-content:flex-end"><button type="button" class="btn btn-light" data-close style="height:50px;padding:0 24px;font-size:15px">Вернуться на сайт <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+</div>
+</div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
