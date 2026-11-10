@@ -60,11 +60,26 @@
       fg.setAttribute('stroke-opacity', p < 0.02 ? '0' : '1');
       num.textContent = shown;
     }
-    if (reduceMotion || TAKEN === 0) { draw(t, TAKEN); return; }
-    var FILL = 1.9, HOLD = 2.8, DRAIN = 0.8, REST = 0.35, CYCLE = FILL + HOLD + DRAIN + REST, t0 = null;
+    if (reduceMotion) { draw(t, TAKEN); return; }
+    // Пока никто не купил — змейка просто «дышит»: плавно заполняется до конца и уходит обратно.
+    // Цифра при этом честная и остаётся 0.
+    var idle = TAKEN === 0;
+    var target = idle ? 10 : t;
+    var FILL = idle ? 2.4 : 1.9, HOLD = idle ? 0.6 : 2.8, DRAIN = idle ? 2.4 : 0.8, REST = idle ? 0.5 : 0.35;
+    var CYCLE = FILL + HOLD + DRAIN + REST, t0 = null;
+    function ease(k) { return k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2; }
     function loop(ts) {
       if (t0 === null) t0 = ts;
       var c = ((ts - t0) / 1000) % CYCLE, p, shown = TAKEN;
+      if (idle) {
+        if (c < FILL) p = target * ease(c / FILL);
+        else if (c < FILL + HOLD) p = target;
+        else if (c < FILL + HOLD + DRAIN) p = target * (1 - ease((c - FILL - HOLD) / DRAIN));
+        else p = 0;
+        draw(p, 0);
+        requestAnimationFrame(loop);
+        return;
+      }
       if (c < FILL) { var k = c / FILL; p = t * (1 - Math.pow(1 - k, 3)); shown = Math.round(p * TOTAL / 10); }
       else if (c < FILL + HOLD) p = t;
       else if (c < FILL + HOLD + DRAIN) { var k2 = (c - FILL - HOLD) / DRAIN; p = t * (1 - k2 * k2 * (3 - 2 * k2)); }
