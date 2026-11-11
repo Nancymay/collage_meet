@@ -2,7 +2,12 @@
   'use strict';
   var C = window.SITE_CONFIG || {};
   var TOTAL = C.seatsTotal || 10;
-  var LIVE = C.paymentMode === 'live' && !!C.apiBase;
+  // ?testpay=1 в адресе включает настоящую оплату только у того, кто открыл такую ссылку —
+  // чтобы проверить Робокассу в тестовом режиме, пока для всех остальных сайт в демо-режиме.
+  var TESTPAY = /(?:^|[?&])testpay=1(?:&|$)/.test(location.search);
+  if (TESTPAY) { try { sessionStorage.setItem('collage-testpay', '1'); } catch (x) {} }
+  try { if (sessionStorage.getItem('collage-testpay') === '1') TESTPAY = true; } catch (x) {}
+  var LIVE = (C.paymentMode === 'live' || TESTPAY) && !!C.apiBase;
   var TAKEN = Math.max(0, Math.min(TOTAL, Math.round(Number(C.seatsTaken) || 0)));
   var LEFT = TOTAL - TAKEN;
   var PRICE = C.price || 2000;
