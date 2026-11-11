@@ -44,7 +44,7 @@ ROBOKASSA_PASS1=пароль_1
 ROBOKASSA_PASS2=пароль_2
 ROBOKASSA_TEST=1
 COLLAGE_ORGANIZER_EMAIL=твоя_почта_для_уведомлений
-COLLAGE_SITE_URL=https://nancymay.github.io/collage_meet/
+COLLAGE_SITE_URL=https://междунами.site/
 ```
 
 `ROBOKASSA_TEST=1` — тестовый режим: деньги не списываются. Когда всё проверишь, поставь боевые пароли и `ROBOKASSA_TEST=0`.
@@ -68,8 +68,8 @@ curl https://api.pokarmanuapp.ru/api/collage/seats
 |---|---|
 | Алгоритм расчёта хеша | MD5 |
 | Result URL | `https://api.pokarmanuapp.ru/api/collage/robokassa-result`, метод **POST** |
-| Success URL | `https://nancymay.github.io/collage_meet/?paid=1`, метод **GET** |
-| Fail URL | `https://nancymay.github.io/collage_meet/?failed=1`, метод **GET** |
+| Success URL | `https://междунами.site/?paid=1`, метод **GET** |
+| Fail URL | `https://междунами.site/?failed=1`, метод **GET** |
 
 Подключи **Робочеки СМЗ**, чтобы чеки самозанятого формировались и уходили гостю автоматически.
 Название услуги в чеке берётся из описания платежа: «Билет на коллажный вечер 5 декабря, N шт.» —

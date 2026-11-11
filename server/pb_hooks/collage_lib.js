@@ -54,7 +54,7 @@ function sendMails(app, order) {
   const name = escapeHtml(order.getString("name"));
   const qty = order.getInt("qty");
   const sum = order.getFloat("sum");
-  const site = env("COLLAGE_SITE_URL", "https://nancymay.github.io/collage_meet/");
+  const site = env("COLLAGE_SITE_URL", "https://междунами.site/");
 
   try {
     app.newMailClient().send(new MailerMessage({
