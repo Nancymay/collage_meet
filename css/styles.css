@@ -119,3 +119,6 @@ a{color:var(--text)}a:hover{color:#fff}
 .site-footer nav{display:flex;flex-wrap:wrap;gap:8px 20px}
 .site-footer a{color:#c9c9c9;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#555}
 .site-footer a:hover{color:#fff}
+.cookie{position:fixed;left:12px;right:12px;bottom:84px;z-index:40;max-width:560px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:14px;background:#1c1c1c;border:1px solid #3a3a3a;box-shadow:0 10px 40px rgba(0,0,0,.6);font-size:13px;line-height:1.45;color:#c9c9c9}
+.cookie a{color:#e8e8e8}
+@media (max-width:480px){.cookie{flex-direction:column;align-items:stretch}}

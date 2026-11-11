@@ -310,5 +310,15 @@
     if (navigator.clipboard) navigator.clipboard.writeText(text + ' ' + url).then(function () { toast('Ссылка скопирована'); });
   });
 
+  // Плашка про cookies — один раз
+  (function () {
+    var bar = $('[data-cookie]'); if (!bar) return;
+    var seen = false; try { seen = localStorage.getItem('collage-cookie-ok') === '1'; } catch (x) {}
+    if (!seen) bar.hidden = false;
+    $('[data-cookie-ok]').addEventListener('click', function () {
+      bar.hidden = true; try { localStorage.setItem('collage-cookie-ok', '1'); } catch (x) {}
+    });
+  })();
+
   loadSeats();
 })();
