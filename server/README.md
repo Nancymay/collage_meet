@@ -68,8 +68,8 @@ curl https://api.pokarmanuapp.ru/api/collage/seats
 |---|---|
 | Алгоритм расчёта хеша | MD5 |
 | Result URL | `https://api.pokarmanuapp.ru/api/collage/robokassa-result`, метод **POST** |
-| Success URL | `https://междунами.site/?paid=1`, метод **GET** |
-| Fail URL | `https://междунами.site/?failed=1`, метод **GET** |
+| Success URL | `https://междунами.site/paid.html`, метод **GET** |
+| Fail URL | `https://междунами.site/failed.html`, метод **GET** |
 
 Подключи **Робочеки СМЗ**, чтобы чеки самозанятого формировались и уходили гостю автоматически.
 Название услуги в чеке берётся из описания платежа: «Билет на коллажный вечер 5 декабря, N шт.» —
