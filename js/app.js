@@ -152,6 +152,13 @@
     document.body.classList.remove('locked');
     if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
   }
+  // Цели Яндекс Метрики: кнопки с data-goal
+  var YM_ID = 114191021;
+  function goal(name) { try { if (window.ym) window.ym(YM_ID, 'reachGoal', name); } catch (x) {} }
+  document.addEventListener('click', function (e) {
+    var g = e.target.closest('[data-goal]');
+    if (g) goal(g.getAttribute('data-goal'));
+  }, true);
   document.addEventListener('click', function (e) {
     var open = e.target.closest('[data-open]');
     if (open) { e.preventDefault(); if (open.getAttribute('data-open') === 'buy') resetForm(); openModal(open.getAttribute('data-open')); return; }
