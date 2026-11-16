@@ -65,13 +65,27 @@ routerAdd("POST", "/api/collage/create-payment", (e) => {
 
   const outSum = res.sum.toFixed(2);
   const description = "Билет на коллажный вечер 5 декабря, " + qty + " шт.";
-  const signature = $security.md5(login + ":" + outSum + ":" + res.invId + ":" + pass1);
+  // Чек для самозанятых («Робочеки СМЗ»): Робокассе нужна номенклатура — что именно продано.
+  // В подписи участвует Receipt, закодированный один раз; в ссылке (GET) — закодированный ещё раз.
+  const receipt = JSON.stringify({
+    items: [{
+      name: "Билет на коллажный вечер 5 декабря",
+      quantity: qty,
+      sum: lib.PRICE * qty,
+      payment_method: "full_payment",
+      payment_object: "service",
+      tax: "none"
+    }]
+  });
+  const receiptEnc = encodeURIComponent(receipt);
+  const signature = $security.md5(login + ":" + outSum + ":" + res.invId + ":" + receiptEnc + ":" + pass1);
 
   const params = {
     MerchantLogin: login,
     OutSum: outSum,
     InvId: String(res.invId),
     Description: description,
+    Receipt: receiptEnc,
     SignatureValue: signature,
     Email: email,
     Culture: "ru",
