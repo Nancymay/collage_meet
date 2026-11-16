@@ -21,6 +21,6 @@ window.SITE_CONFIG = {
   //          число мест берётся из seatsTaken выше.
   // 'live' — сайт спрашивает у сервера, сколько мест занято, и отправляет на оплату в Робокассу.
   //          Включайте, когда сервер настроен по server/README.md.
-  paymentMode: 'demo', // 'demo' | 'live'
+  paymentMode: 'live', // 'demo' | 'live'
   apiBase: 'https://api.pokarmanuapp.ru/api/collage'
 };
