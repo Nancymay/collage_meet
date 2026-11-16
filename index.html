@@ -307,21 +307,12 @@
 <input id="f-phone" name="phone" class="field ym-disable-keys" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7 900 000-00-00" aria-describedby="e-phone">
 <span id="e-phone" class="ferr" hidden>Нужен номер из 10–11 цифр</span>
 </div>
-<div style="display:flex;flex-direction:column;gap:8px">
-<span id="pm-label" class="flabel">Способ оплаты</span>
-<div role="group" aria-labelledby="pm-label" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px">
-<button type="button" class="pm" data-method="card" aria-pressed="true"><span class="ic"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 15h4"/></svg></span><span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:14px;font-weight:600">Картой</span><span style="font-size:12px;color:var(--muted);line-height:1.3">Любая карта российского банка</span></span></button>
-<button type="button" class="pm" data-method="sbp" aria-pressed="false"><span class="ic"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3.5" y="3.5" width="6.5" height="6.5" rx="1"/><rect x="14" y="3.5" width="6.5" height="6.5" rx="1"/><rect x="3.5" y="14" width="6.5" height="6.5" rx="1"/><path d="M14 14h2.5v2.5H14zM18 18h2.5v2.5H18zM14 20.5h2M20.5 14v2"/></svg></span><span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:14px;font-weight:600">СБП</span><span style="font-size:12px;color:var(--muted);line-height:1.3">QR-код или приложение банка</span></span></button>
-<button type="button" class="pm" data-method="tpay" aria-pressed="false"><span class="ic"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span><span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:14px;font-weight:600">T-Pay</span><span style="font-size:12px;color:var(--muted);line-height:1.3">В приложении Т-Банка</span></span></button>
-<button type="button" class="pm" data-method="sberpay" aria-pressed="false"><span class="ic"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span><span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:14px;font-weight:600">SberPay</span><span style="font-size:12px;color:var(--muted);line-height:1.3">В приложении СберБанка</span></span></button>
-</div>
-</div>
 <label style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#b0b0b0;line-height:1.4;cursor:pointer">
 <input id="f-consent" type="checkbox" style="width:18px;height:18px;margin:1px 0 0;accent-color:var(--accent);flex:none" aria-describedby="e-consent">
 <span>Согласен(на) на обработку персональных данных в соответствии с <a href="privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a> и с условиями <a href="oferta.html" target="_blank" rel="noopener">публичной оферты</a></span>
 </label>
 <span id="e-consent" class="ferr" hidden style="margin-top:-8px">Без согласия не получится оформить билет</span>
-<button type="submit" class="btn btn-accent" style="height:56px;font-size:16px;margin-top:4px">Оплатить <span data-total>2 000 ₽</span></button>
+<button type="submit" class="btn btn-accent" style="height:56px;font-size:16px;margin-top:4px">Оплатить картой<span data-total>2 000 ₽</span></button>
 <span style="font-size:12px;color:var(--muted);text-align:center;line-height:1.4">Оплата проходит на защищённой странице Робокассы. Чек придёт на почту автоматически.</span>
 </form>
 </div>
