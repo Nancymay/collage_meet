@@ -52,7 +52,7 @@ function seatsWord(n) {
 const MAP_URL = "https://yandex.ru/maps/?text=" + encodeURIComponent("Москва, Настасьинский переулок, 1");
 const CAL_URL = "https://calendar.google.com/calendar/render?action=TEMPLATE" +
   "&text=" + encodeURIComponent("Коллажный вечер") +
-  "&dates=20261205T120000Z/20261205T150000Z" +
+  "&dates=20261205T120000Z/20261205T140000Z" +
   "&details=" + encodeURIComponent("Мини-лекция, коллажи и арт-разбор. Вход: главный, подъезд «Бизнес Центр», лифт до 4 этажа, охране назвать кабинет № 406. Телефон Стаси: +7 999 852-68-21") +
   "&location=" + encodeURIComponent("Зал 406, студии H4U, Москва, Настасьинский пер., 1");
 
@@ -80,7 +80,7 @@ function buyerHtml(name, qty, sum, inv, site) {
     '<h1 style="' + F + 'margin:20px 0 10px;font-size:28px;line-height:1.15;font-weight:700;color:#f6f2ec">' + (name ? name + ", ура" : "Ура") + ", вы идёте на коллажный вечер!</h1>" +
     '<p style="' + F + 'margin:0 0 22px;font-size:15px;line-height:1.5;color:#b0b0b0">Ждём вас — ножницы и клей уже на столе. Чек от Робокассы придёт отдельным письмом.</p>' +
     '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #2c2c2c;border-radius:12px;border-collapse:separate">' +
-    row("Когда", "<b>5 декабря, суббота</b> · начало в 15:00") +
+    row("Когда", "<b>5 декабря, суббота</b> · с 15:00 до 17:00") +
     row("Где", '<a href="' + MAP_URL + '" style="' + A + '">Зал 406 · студии H4U, Москва, Настасьинский пер., 1</a><br><span style="color:#8a8a8a">м. Пушкинская, Тверская, Чеховская</span>') +
     row("Вход", "главный, подъезд «Бизнес Центр», на лифте до 4 этажа; охране назовите кабинет <b>№ 406</b>") +
     row("Не нашли?", 'звоните Стасе: <a href="tel:+79998526821" style="' + A + 'white-space:nowrap">+7 999 852-68-21</a>') +
@@ -113,7 +113,7 @@ function sendMails(app, order) {
     app.newMailClient().send(new MailerMessage({
       from: from,
       to: [{ address: order.getString("email") }],
-      subject: "Ваш билет на коллажный вечер · 5 декабря, 15:00",
+      subject: "Ваш билет на коллажный вечер · 5 декабря, 15:00–17:00",
       html: buyerHtml(name, qty, sum, order.getInt("inv_id"), site)
     }));
   } catch (err) {
