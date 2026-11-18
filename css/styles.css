@@ -14,7 +14,7 @@ a{color:var(--text)}a:hover{color:#fff}
 .card:hover{border-color:#4a4a4a}
 .lbl{font-size:13px;color:var(--muted);letter-spacing:.01em}
 .chip{display:inline-flex;align-items:center;height:26px;padding:0 12px;border:1px solid #444;border-radius:999px;font-size:12px;color:#a6a6a6;white-space:nowrap}
-.rule{height:1px;background:var(--line);border:0;margin:0}
+.rule{display:none}
 .accent-text{color:var(--accent)}
 
 /* вырезанные буквы */
@@ -61,7 +61,7 @@ a{color:var(--text)}a:hover{color:#fff}
 .thumbs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .facts{display:flex;flex-direction:column;border:1px solid #2c2c2c;border-radius:12px;background:#101010}
 .facts > div{display:flex;gap:12px;padding:14px;font-size:14px}
-.facts > div + div{border-top:1px solid #2c2c2c}
+.facts > div + div{border-top:0}
 .facts .k{width:110px;flex:none;color:var(--muted)}
 .steps{display:flex;flex-direction:column;gap:8px;font-size:14px;line-height:1.45;color:#c9c9c9}
 .steps > div{display:flex;gap:12px}
@@ -115,7 +115,7 @@ a{color:var(--text)}a:hover{color:#fff}
 .quickbar .btn{white-space:nowrap}
 @media (max-width:480px){.quickbar a.btn{display:none}.quickbar > div{padding:5px}}
 
-.site-footer{max-width:1400px;margin:28px auto 0;padding:20px 8px;border-top:1px solid #262626;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;font-size:13px;color:var(--muted)}
+.site-footer{max-width:1400px;margin:28px auto 0;padding:20px 8px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;font-size:13px;color:var(--muted)}
 .site-footer nav{display:flex;flex-wrap:wrap;gap:8px 20px}
 .site-footer a{color:#c9c9c9;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#555}
 .site-footer a:hover{color:#fff}
